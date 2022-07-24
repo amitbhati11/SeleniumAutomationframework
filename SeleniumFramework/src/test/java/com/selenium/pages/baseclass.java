@@ -32,7 +32,7 @@ public class baseclass extends Browserfactory {
 	@BeforeSuite
 	
 	public void beforestart() throws IOException {
-		Reporter.log(" starting setup");
+		Reporter.log(" starting setup",true);
 		pc=new propertyclass();
 		hp=new Helper();
 		String repath="C:\\Users\\Admin_SRV\\eclipse-workspace\\SeleniumFramework\\Reports\\Project_"+hp.getcurrenttime()+"_report.html";
@@ -41,7 +41,7 @@ public class baseclass extends Browserfactory {
 		
 		report.attachReporter(extent);
 		
-		Reporter.log(" successfully setup");
+		Reporter.log(" successfully setup",true);
 		
 		
 	}
@@ -49,16 +49,16 @@ public class baseclass extends Browserfactory {
 	@BeforeClass
 	
 	public void startbrowser(String browser) {
-		Reporter.log("browser starting setup");
+		Reporter.log("browser starting",true);
 		driver=Browserfactory.startapplication(driver,browser,pc.getappurl());
 	//	driver=Browserfactory.startapplication(driver,browser,url);
-		Reporter.log("Browser successfully setup");
+		Reporter.log("Browser successfully setup",true);
 	}
 	
 	@AfterMethod
 	
 	public void aftermethod(ITestResult result) throws IOException {
-		 Reporter.log("test is starting");
+		 Reporter.log("test is starting",true);
 		if(result.getStatus()==ITestResult.FAILURE) {
 		//hp.capturesceenshot(driver);
 			logger.fail("test failed",MediaEntityBuilder.createScreenCaptureFromPath(hp.capturesceenshot(driver)).build());
@@ -67,8 +67,9 @@ public class baseclass extends Browserfactory {
 		//hp.capturesceenshot(driver);
 		logger.pass("test passed",MediaEntityBuilder.createScreenCaptureFromPath(hp.capturesceenshot(driver)).build());
 	}
-	Reporter.log("report are generated");
+	
 		report.flush();
+		Reporter.log("report are generated",true);
 	}
 
 }
