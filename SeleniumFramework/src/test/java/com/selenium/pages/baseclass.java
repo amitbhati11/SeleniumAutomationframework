@@ -51,6 +51,7 @@ public class baseclass extends Browserfactory {
 	public void startbrowser(String browser) {
 		Reporter.log("browser starting setup");
 		driver=Browserfactory.startapplication(driver,browser,pc.getappurl());
+	//	driver=Browserfactory.startapplication(driver,browser,url);
 		Reporter.log("Browser successfully setup");
 	}
 	

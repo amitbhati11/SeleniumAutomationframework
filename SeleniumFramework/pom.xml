@@ -51,7 +51,7 @@
           </suiteXmlFiles> 
           <systemPropertyVariables>
           <exectuinbrowser>${browser}</exectuinbrowser>
-          
+         
           </systemPropertyVariables>
         </configuration>
       </plugin>
