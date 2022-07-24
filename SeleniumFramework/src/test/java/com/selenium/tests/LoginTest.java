@@ -20,7 +20,10 @@ public class LoginTest extends baseclass {
 		lp.user_name(username);
 		lp.user_pass(password);
 		lp.loginbtn();
-		logger.pass("test passed");
+		Thread.sleep(1500);
+		driver.navigate().refresh();
+		Thread.sleep(500);
+	logger.pass("test passed");
 	}
 
 }
