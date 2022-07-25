@@ -22,8 +22,8 @@ public class loginpage {
 	}
 	public void loginbtn() throws InterruptedException {
 		driver.findElement(lbtn).click();
-		Thread.sleep(1000);
-		driver.findElement(logut).click();
+		Thread.sleep(4000);
+	//	driver.findElement(logut).click();
 	}
 	
 }
